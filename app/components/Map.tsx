@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import * as L from "leaflet";
+import L from "leaflet";
 
 // 🟢 Custom marker
 const greenIcon = L.divIcon({
