@@ -110,9 +110,8 @@ export default function Map() {
     return (
         <div className="relative w-full h-[420px]">
             {/* 🌍 MAP */}
-            {/* @ts-ignore */}
             <MapContainer
-                center={location.position}
+                center={location.position as any}
                 zoom={12}
                 scrollWheelZoom={true}
                 className="h-full w-full rounded-[28px] z-0"
