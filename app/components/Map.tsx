@@ -41,7 +41,7 @@ function FlyTo({ position }: { position: [number, number] }) {
 
     useEffect(() => {
         map.flyTo(position, 13, { duration: 1.2 });
-    }, [position, map]);
+    }, [position]);
 
     return null;
 }
@@ -111,14 +111,19 @@ export default function Map() {
         <div className="relative w-full h-[420px]">
             {/* 🌍 MAP */}
             <MapContainer
-                center={location.position as any}
-                zoom={12}
-                scrollWheelZoom={true}
-                className="h-full w-full rounded-[28px] z-0"
+                key="map"
+                {...({
+                    center: location.position,
+                    zoom: 12,
+                    scrollWheelZoom: true,
+                    className: "h-full w-full rounded-[28px] z-0",
+                } as any)}
             >
                 <TileLayer
-                    attribution="&copy; OpenStreetMap"
-                    url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+                    {...({
+                        attribution: "&copy; OpenStreetMap",
+                        url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                    } as any)}
                 />
 
                 <Marker
