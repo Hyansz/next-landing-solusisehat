@@ -58,7 +58,7 @@ export default function Footer() {
                             Area
                         </a>
                         <a
-                            href="#kontak"
+                            href="#cta"
                             className="text-gray-500 hover:text-gray-900 transition"
                         >
                             Kontak
