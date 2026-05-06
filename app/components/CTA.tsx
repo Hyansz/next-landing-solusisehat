@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function CTA() {
     return (
-        <section id="cta" className="py-[100px] md:py-[120px] bg-[#f9fafb]">
+        <section className="py-[70px] md:py-[120px] bg-[#f9fafb]">
             <Container>
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -30,7 +30,7 @@ export default function CTA() {
                 >
                     {/* 🧊 LEFT */}
                     <div className="flex-1 p-[28px] sm:p-[32px] md:p-[56px]">
-                        <h3 className="text-[22px] pt-4 md:pt-0 sm:text-[24px] md:text-[30px] font-semibold text-gray-900 tracking-tight leading-snug">
+                        <h3 id="cta" className="text-[22px] pt-4 md:pt-0 sm:text-[24px] md:text-[30px] font-semibold text-gray-900 tracking-tight leading-snug">
                             Layanan Homecare Profesional
                         </h3>
 

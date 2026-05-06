@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { Star } from "lucide-react";
 
 // 🟢 Custom marker
 const greenIcon = L.divIcon({
@@ -105,6 +106,33 @@ export default function Map() {
         isDragging.current = false;
     };
 
+    const handleTouchStart = (e: React.TouchEvent) => {
+        isDragging.current = true;
+        startX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (!isDragging.current) return;
+
+        const diff = e.touches[0].clientX - startX.current;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                setImgIndex((prev) =>
+                    prev === 0 ? images.length - 1 : prev - 1,
+                );
+            } else {
+                setImgIndex((prev) => (prev + 1) % images.length);
+            }
+
+            isDragging.current = false;
+        }
+    };
+
+    const handleTouchEnd = () => {
+        isDragging.current = false;
+    };
+
     if (!mounted) return null;
 
     return (
@@ -122,7 +150,7 @@ export default function Map() {
                 <TileLayer
                     {...({
                         attribution: "&copy; OpenStreetMap",
-                        url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.webp",
+                        url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                     } as any)}
                 />
 
@@ -151,7 +179,7 @@ export default function Map() {
             {/* 🔥 PANEL */}
             <div
                 className={`
-                    absolute top-0 right-0 h-full w-[380px]
+                    absolute top-0 right-0 h-full w-full md:w-[380px]
                     z-50
                     transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
                     ${active ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}
@@ -195,7 +223,10 @@ export default function Map() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseUp}
-                            className="relative h-[160px] rounded-[18px] overflow-hidden cursor-grab active:cursor-grabbing"
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            className="relative h-[160px] rounded-[18px] overflow-hidden cursor-grab active:cursor-grabbing touch-pan-y"
                         >
                             {images.map((img, i) => (
                                 <img
@@ -235,7 +266,7 @@ export default function Map() {
                         </div>
 
                         {/* STATS */}
-                        <div className="grid grid-cols-3 gap-3">
+                        <div className="grid grid-cols-3 gap-2 md:gap-3">
                             <div className="bg-white/60 rounded-[12px] p-3 text-center backdrop-blur">
                                 <p className="text-[15px] font-semibold">50+</p>
                                 <p className="text-[11px] text-gray-500">
@@ -253,9 +284,12 @@ export default function Map() {
                             </div>
 
                             <div className="bg-white/60 rounded-[12px] p-3 text-center backdrop-blur">
-                                <p className="text-[15px] font-semibold">
-                                    4.9★
-                                </p>
+                                <div className="flex items-center justify-center gap-1">
+                                    <p className="text-[15px] font-semibold">
+                                        4.9
+                                    </p>
+                                    <Star className="w-3.5 h-3.5 md:w-4 md:h-4 text-yellow-400 fill-yellow-400" />
+                                </div>
                                 <p className="text-[11px] text-gray-500">
                                     Rating
                                 </p>
@@ -272,7 +306,7 @@ export default function Map() {
                         {/* LIST */}
                         <div className="space-y-2 text-[13px]">
                             {[
-                                "Dokter & Perawat tersedia",
+                                "Tenaga Medis tersedia",
                                 "Kunjungan ke rumah",
                                 "Respon cepat < 30 menit",
                                 "Layanan 24 jam nonstop",
@@ -291,9 +325,10 @@ export default function Map() {
 
                     {/* 🔘 FOOTER */}
                     <div className="py-3 px-6 border-t border-gray-100 flex items-center justify-center gap-3">
-                        <button
-                            onClick={handleWhatsApp}
-                            className="
+                        <div className="w-[60%] md:w-[50%]">
+                            <button
+                                onClick={handleWhatsApp}
+                                className="
                                 w-full
                                 bg-green-600 hover:bg-green-700
                                 text-white
@@ -307,16 +342,19 @@ export default function Map() {
                                 duration-300
                                 cursor-pointer
                             "
-                        >
-                            Pesan Layanan
-                        </button>
+                            >
+                                Pesan Layanan
+                            </button>
+                        </div>
 
-                        <button
-                            onClick={() => setActive(false)}
-                            className="w-full text-base text-gray-500 bg-white hover:scale-105 duration-300 py-2 rounded-[12px] transition shadow-md hover:shadow-lg cursor-pointer"
-                        >
-                            Tutup
-                        </button>
+                        <div className="w-[40%] md:w-[50%]">
+                            <button
+                                onClick={() => setActive(false)}
+                                className="w-full text-base text-gray-500 bg-white hover:scale-105 duration-300 py-2 rounded-[12px] transition shadow-md hover:shadow-lg cursor-pointer"
+                            >
+                                Tutup
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

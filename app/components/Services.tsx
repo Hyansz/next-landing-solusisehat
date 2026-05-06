@@ -11,8 +11,8 @@ import {
 const services = [
     {
         icon: Stethoscope,
-        title: "Kunjungan Dokter",
-        desc: "Layanan dokter profesional langsung ke rumah untuk pemeriksaan dan tindakan medis.",
+        title: "Home Visit",
+        desc: "Layanan dokter, perawat, bidan, caregiver, dan fisioterapis profesional langsung ke rumah untuk pemeriksaan dan tindakan medis.",
     },
     {
         icon: Video,

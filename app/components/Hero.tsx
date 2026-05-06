@@ -6,11 +6,17 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative min-h-[100svh] overflow-hidden text-white"
+            className="relative min-h-[100svh] pt-6 overflow-hidden text-white"
         >
             {/* 🔵 Background */}
             <div
-                className="absolute inset-0 bg-cover bg-[550px] md:bg-top scale-105"
+                className="
+                    absolute inset-0
+                    bg-no-repeat
+                    bg-cover
+                    bg-[89%_center]
+                    md:bg-top
+                "
                 style={{
                     backgroundImage: "url('/img/bg-hero.webp')",
                 }}

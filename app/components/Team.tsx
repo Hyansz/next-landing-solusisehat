@@ -7,11 +7,12 @@ import Container from "./Container";
 
 const doctors = [
     {
-        name: "dr. Andi Pratama",
+        name: "dr. Wahid",
         role: "Dokter Umum",
         hospital: "RS PKU Muhammadiyah Surakarta",
         rating: "4.9",
         reviews: 128,
+        image: "/img/dokte2.webp"
     },
     {
         name: "Ns. Siti Rahmawati",
@@ -19,6 +20,7 @@ const doctors = [
         hospital: "RSUD Dr. Moewardi Surakarta",
         rating: "4.8",
         reviews: 214,
+        image: "/img/perawat.webp"
     },
     {
         name: "Ahmad Fajar",
@@ -26,6 +28,7 @@ const doctors = [
         hospital: "RS Ortopedi Prof. Dr. R. Soeharso",
         rating: "4.7",
         reviews: 96,
+        image: "/img/fisio.webp"
     },
     {
         name: "Maya Lestari",
@@ -33,6 +36,7 @@ const doctors = [
         hospital: "RS Kasih Ibu Surakarta",
         rating: "4.9",
         reviews: 180,
+        image: "/img/caregiver.webp"
     },
     {
         name: "dr. Budi Santoso",
@@ -40,6 +44,7 @@ const doctors = [
         hospital: "RS Islam Surakarta",
         rating: "4.6",
         reviews: 75,
+        image: "/img/dokte1.webp"
     },
     {
         name: "Ns. Rina Kartika",
@@ -47,35 +52,8 @@ const doctors = [
         hospital: "RS JIH Solo",
         rating: "4.8",
         reviews: 142,
-    },
-    {
-        name: "Dwi Nugraha",
-        role: "Fisioterapis",
-        hospital: "RS Universitas Sebelas Maret",
-        rating: "4.7",
-        reviews: 110,
-    },
-    {
-        name: "Siti Aisyah",
-        role: "Caregiver",
-        hospital: "RS Brayat Minulya Surakarta",
-        rating: "4.5",
-        reviews: 68,
-    },
-    {
-        name: "dr. Rizky Maulana",
-        role: "Dokter Umum",
-        hospital: "RS Hermina Solo",
-        rating: "4.9",
-        reviews: 156,
-    },
-    {
-        name: "Ns. Arif Setiawan",
-        role: "Perawat",
-        hospital: "RS Slamet Riyadi Surakarta",
-        rating: "4.6",
-        reviews: 89,
-    },
+        image: "/img/perawat2.webp"
+    }
 ];
 
 export default function Team() {
@@ -186,7 +164,7 @@ export default function Team() {
                                     {/* IMAGE */}
                                     <div className="relative w-full h-[220px] md:h-[300px] overflow-hidden">
                                         <Image
-                                            src="/img/dokte.webp"
+                                            src={doc.image}
                                             alt={doc.name}
                                             fill
                                             sizes="(max-width: 768px) 80vw, 240px"

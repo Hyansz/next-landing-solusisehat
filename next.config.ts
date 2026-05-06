@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     typescript: {
         ignoreBuildErrors: false,
     },
+    allowedDevOrigins: ["192.168.88.28"]
 };
 
 export default nextConfig;

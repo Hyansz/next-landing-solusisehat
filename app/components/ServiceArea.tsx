@@ -19,11 +19,11 @@ export default function ServiceArea() {
 
             <div className="relative z-10 scroll-mt-[100px]">
                 {/* TITLE */}
-                <div id="area" className="text-center mb-[56px] px-6">
+                <div className="text-center mb-5 md:mb-[56px] px-6">
                     <h2 className="text-[28px] md:text-[32px] font-semibold text-white tracking-tight">
                         Area Layanan Kami
                     </h2>
-                    <p className="mt-[12px] text-white/80 text-[14px] max-w-[480px] mx-auto">
+                    <p id="area" className="mt-[12px] text-white/80 text-[14px] max-w-[480px] mx-auto">
                         Kami melayani berbagai wilayah untuk memastikan Anda
                         mendapatkan layanan kesehatan terbaik langsung di rumah
                     </p>
