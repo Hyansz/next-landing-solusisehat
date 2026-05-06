@@ -106,7 +106,7 @@ export default function Navbar() {
                     >
                         {/* LOGO */}
                         <img
-                            src="/img/logo1.png"
+                            src="/img/logo1.webp"
                             alt="logo"
                             className="h-9 md:h-11 lg:h-12 cursor-pointer opacity-90 hover:opacity-100 transition"
                             onClick={() => handleScrollTo("home")}
@@ -156,7 +156,7 @@ export default function Navbar() {
                     >
                         {/* HEADER */}
                         <div className="flex justify-between items-center px-6 py-5 border-b border-gray-200">
-                            <img src="/img/logo1.png" className="h-8" />
+                            <img src="/img/logo1.webp" className="h-8" />
 
                             <button
                                 onClick={() => setOpen(false)}

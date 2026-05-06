@@ -11,7 +11,7 @@ export default function Footer() {
                     {/* LEFT - Brand */}
                     <div className="space-y-4 md:col-span-2 text-center md:text-left flex flex-col items-center md:items-start">
                         <img
-                            src="./img/logo1.png"
+                            src="./img/logo1.webp"
                             alt="SolusiSehat Logo"
                             className="h-10 md:h-11 object-contain"
                         />

@@ -186,7 +186,7 @@ export default function Team() {
                                     {/* IMAGE */}
                                     <div className="relative w-full h-[220px] md:h-[300px] overflow-hidden">
                                         <Image
-                                            src="/img/dokte.png"
+                                            src="/img/dokte.webp"
                                             alt={doc.name}
                                             fill
                                             sizes="(max-width: 768px) 80vw, 240px"

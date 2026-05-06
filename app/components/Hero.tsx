@@ -12,7 +12,7 @@ export default function Hero() {
             <div
                 className="absolute inset-0 bg-cover bg-[550px] md:bg-top scale-105"
                 style={{
-                    backgroundImage: "url('/img/bg-hero.png')",
+                    backgroundImage: "url('/img/bg-hero.webp')",
                 }}
             />
 
