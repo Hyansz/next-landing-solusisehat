@@ -29,7 +29,7 @@ const handleWhatsApp = () => {
     const phoneNumber = "6285111313157"; // ganti dengan nomor WA bisnis kamu
 
     const message = encodeURIComponent(
-        `Halo Home Care Solusi Sehat, saya ingin konsultasi layanan home care di area ${location.name}.\nApakah bisa dibantu?`,
+        `Halo Home Care Solusi Sehat, saya ingin konsultasi di area ${location.name}, apakah bisa di bantu?`,
     );
 
     const url = `https://wa.me/${phoneNumber}?text=${message}`;

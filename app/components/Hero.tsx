@@ -66,7 +66,7 @@ export default function Hero() {
                                 {/* WA CTA */}
                                 <a
                                     href={`https://wa.me/6285111313157?text=${encodeURIComponent(
-                                        "Halo Home Care Solusi Sehat, boleh saya konsultasi lebih lanjut mengenai layanan yang cocok untuk kebutuhan keluarga saya?\nTerima kasih",
+                                        "Halo Home Care Solusi Sehat, saya ingin konsultasi, apakah bisa di bantu?",
                                     )}`}
                                     target="_blank"
                                     className="w-full sm:w-auto px-6 py-3 rounded-full bg-white text-[#0c66af] font-medium shadow-lg hover:scale-105 transition text-center"

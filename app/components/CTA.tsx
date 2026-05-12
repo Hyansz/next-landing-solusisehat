@@ -42,7 +42,7 @@ export default function CTA() {
                         {/* CTA BUTTON */}
                         <motion.a
                             href={`https://wa.me/6285111313157?text=${encodeURIComponent(
-                                "Halo Home Care Solusi Sehat, boleh saya konsultasi lebih lanjut mengenai layanan yang cocok untuk kebutuhan keluarga saya?\nTerima kasih",
+                                "Halo Home Care Solusi Sehat, saya ingin konsultasi, apakah bisa di bantu?",
                             )}`}
                             target="_blank"
                             whileHover={{
