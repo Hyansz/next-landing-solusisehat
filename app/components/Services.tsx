@@ -46,11 +46,9 @@ export default function Services() {
         <section className="py-16 md:py-[96px] bg-[#f9fafb]">
             <Container>
                 {/* TITLE */}
-                <div className="text-center max-w-[520px] mx-auto mb-12 md:mb-[64px]">
+                <div className="text-center max-w-xl mx-auto mb-12 md:mb-[64px]">
                     <h2 className="text-2xl md:text-[28px] font-semibold text-gray-900 leading-tight">
-                        Segala Kemudahan
-                        <br className="md:hidden" />
-                        Dalam Genggaman
+                        Segala Kemudahan Dalam Genggaman
                     </h2>
 
                     <p className="mt-3 text-sm md:text-[14px] text-gray-600 leading-relaxed">
